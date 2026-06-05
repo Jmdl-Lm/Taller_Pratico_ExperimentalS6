@@ -1,111 +1,126 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+     * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #000000;
+      min-height: 100vh;
+    }
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    .hero_apartado {
+      background: linear-gradient(160deg, #1a1209 0%, #0d0a08 50%, #12080d 100%);
+    }
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
+    .boton_Colección {
+      background: #c9a96e;
+      color: #424300;
+      border: none;
+      padding: 10px 24px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+ 
+    .boton_descartar {
+      background: transparent;
+      color: #c9a96e;
+      border: 1px solid #c9a96e;
+      padding: 9px 22px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+    .boton_anadir {
+      background: #2a3a1a;
+      color: #7ec87e;
+      border: 1px solid #4a6a2a;
+      padding: 9px 22px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: default;
+      width: 100%;
+    }
+ 
+    .carta_perfume {
+      background: #16120d;
+      border: 1px solid #000000;
+    }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
+    .nav {
+      background: rgba(13, 10, 8, 0.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #2a2218;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+ 
+    .panel_desplegable{
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 340px;
+      background: #12100d;
+      border-left: 1px solid #2a2218;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -20px 0 60px rgba(255, 251, 251, 0.53);
+    }
+ 
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(240, 240, 240, 0.4);
+      z-index: 150;
+    }
 
-body {
-  margin: 0;
-}
+    .productos_encarrito {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #59c92d;
+      align-items: center;
+    }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
+ 
+    .botones_cantidad {
+      background: #2a2218;
+      border: 1px solid #3a3228;
+      color: #e8ddd0;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+ 
+    .carrito_vacio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      color: #9a1d40;
+      gap: 12px;
+    }
+ 
